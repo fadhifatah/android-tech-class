@@ -12,6 +12,9 @@ fun buildString(build: StringBuilder.() -> Unit): String {
 }
 
 // TODO("Buat sebuah builder dengan nama buildMutableMap(), seperti buildString()")
+/*fun <K, V> buildMutableMap(/* TODO("Lanjutkan!") */): Map<K, V> {
+    TODO("Lanjutkan!")
+}*/
 
 /*
 Exercise 5: Extension function
@@ -24,7 +27,7 @@ Lalu buat hal serupa, extension function isOdd(), untuk mendeteksi apakah suatu 
 ganjil atau bukan.
  */
 fun Int.isEven(): Boolean {
-    return TODO("Return true jika genap")
+    TODO("Return true jika genap")
 }
 
 // TODO(""Buat extension function serupa untuk isOdd())
@@ -39,7 +42,7 @@ ke dalam variable String yang tidak boleh menerima null. Bila dipaksakan akan te
 Scope function terdiri dari let, apply, run, with, also. Masing-masing memiliki bentuk tersendiri yang dapat digunakan
 dalam berbagai kebutuhan, silakan dipelajari terlebih dahulu!
  */
-val mapOfString = hashMapOf(1 to "Satu", 2 to "Loro", 3 to "Seth", 4 to "Four", 5 to "Go")
+val mapOfString = hashMapOf(1 to "Satu", 2 to "Loro", 3 to "Seth", 4 to "Four", 5 to "Go") // Jangan diubah
 
 fun getSomething(index: Int): String? = mapOfString[index]
 
@@ -48,11 +51,12 @@ fun process(text: String) {
 }
 
 fun run() {
-    val temporary_1 = getSomething(4)
-    val temporary_2 = getSomething(1)
+    val teks4 = getSomething(4) // Should be "Four" in String? type
+    val teks6 = getSomething(6) // Should be null
 
-    process(temporary_2) // TODO("Gunakan syntax !! untuk menjelaskan pada Kotlin, bahwa variable tersebut tidak bernilai null. Tapi harap hati-hati dalam menggunakan `!!`, selalu pastikan tidak return null")
-    process(temporary_1) // TODO("Error. Gunakan `let` dan safe call agar process() bisa dijalankan jika $temporary tidak null")
+    // TODO("Hapus comment section //")
+    // process(teks6) TODO("Gunakan syntax !! untuk menjelaskan pada Kotlin, bahwa variable tersebut tidak bernilai null. Tapi harap hati-hati dalam menggunakan `!!`, selalu pastikan tidak return null")
+    // process(teks4) TODO("Error. Gunakan `let` dan safe call agar process() bisa dijalankan jika $teks4 dan $teks6 tidak null")
 }
 
 /*
@@ -61,7 +65,7 @@ Exercise 7: Scope function
 Implementasi sebuah scope function baru bernama custom, custom memiliki syntax yang sama dengan apply
  */
 fun <T> T.custom(f: T.() -> Unit): T {
-    TODO("Lengkapi syntax di dalam sini, agar dapat berfungsi sebagai apply pada scope function :)")
+    TODO("Lengkapi syntax di dalam, agar dapat berfungsi sebagai apply pada scope function :)")
 }
 
 // Pastikan tidak ada error
@@ -93,18 +97,21 @@ fun main(args: Array<String>) {
             append(i)
         }
     }
+    println(s == "Numbers: 123") // true
 
+    // Hapus comment section /* dan */. Pastikan tidak ada error
+    /*
     val mapping: Map<Int, String> = buildMutableMap {
         put(0, "0")
         for (i in 1..5) {
             put(i, "$i")
         }
     }
+    println(mapping) // {0=0, 1=1, 2=2, 3=3, 4=4, 5=5}
+    */
 
     val angka = 123
 
-    println(s == "Numbers: 123") // true
-    println(mapping) // {0=0, 1=1, 2=2, 3=3, 4=4, 5=5}
     println(angka.isEven()) // false
-    println(angka.isOdd()) // true
+    // println(angka.isOdd()) // true
 }

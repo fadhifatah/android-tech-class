@@ -33,11 +33,12 @@ class Sum(val left: Expr, val right: Expr) : Expr
 /*
 Exercise 1: Interface implementation
 
+MyDate merupakan data class dengan properti year, month, dan dayOfMonth.
 Comparable memiliki function compareTo() yang harus dideklarasikan oleh class yang me-inheritance terhadap dirinya.
 Cek main() di bawah, untuk mengetahui implementasi sudah benar atau salah
 */
-class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : Comparable<MyDate> {
-    TODO("Implementasi comparable di MyDate")
+data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int)/* TODO("Hapus comment section ini /* dan */") : Comparable<MyDate> */ {
+    /* TODO("Implementasi comparable di MyDate") */
 }
 
 /*
@@ -61,8 +62,9 @@ class Helper {
             Storage.set("userId", value)
         }
 
-    var status: String
-        TODO("Implementasi get/set dimana, key yang digunakan adalah \"status\", default value ketika get adalah \"inactive\"")
+    // Hapus comment section /* dan */
+    /* var status: String
+        TODO("Implementasi get/set dimana, key yang digunakan adalah \"status\", default value ketika get adalah \"inactive\"") */
 }
 
 // Jangan diubah!
@@ -76,7 +78,7 @@ final class Storage {
             mapping[key] = value
         }
     }
-    }
+}
 
 /*
 Exercise 3: Properties access
@@ -101,11 +103,21 @@ class Fragment {
     private val presenter = Presenter(DataManager.build())
 
     fun initiateView() {
-        presenter.dataManager.getProfiles() // TODO("Compile error. Ubah properti di dalam class Presenter sehingga bisa mengambil dataManager dari presenter")
+        // presenter.dataManager.getProfiles() TODO("Hapus comment section // akan membuat compile error. Ubah properti di dalam class Presenter sehingga bisa mengambil dataManager dari presenter")
     }
 }
 
 // Pastikan tidak ada error di sini
 fun main(args: Array<String>) {
-    print(MyDate(2021, 2, 12) < MyDate(2021, 1, 1)) // false
+    print(MyDate(2021, 2, 12) == MyDate(2021, 1, 1)) // false
+    // print(MyDate(2021, 2, 12) < MyDate(2021, 1, 1)) // false
+    // print(MyDate(2021, 2, 12) > MyDate(2021, 1, 1)) // true
+
+    // Hapus comment section /* dan */. Pastikan tidak ada error di sini
+    /*
+    val helper = Helper()
+    print(helper.status) // "inactive"
+    helper.status = "on_hold"
+    print(helper.status) // "on_hold"
+     */
 }
