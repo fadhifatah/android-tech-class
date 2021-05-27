@@ -20,7 +20,7 @@ package exercise.part_one
  *
  */
 fun foo(/* TODO("9.1 Isi argument sesuai dengan kebutuhan foo() di atas") */): String =
-    TODO("9.2 Hapus simbol komen ini") // (if (toUpperCase) name.toUpperCase() else name) + number
+    TODO("9.2 Hapus comment section // di samping") // (if (toUpperCase) name.toUpperCase() else name) + number
 
 // Extension function untuk melakukan partition suatu Iterable (Collection)
 public inline fun <T> Iterable<T>.partition(predicate: (T) -> Boolean): Pair<List<T>, List<T>> {
@@ -47,26 +47,26 @@ public inline fun <T> Iterable<T>.partition(predicate: (T) -> Boolean): Pair<Lis
  * object collection lain sejenis, memiliki fungsi yang sama dengan variable first dan second pada
  * extension function partition() di atas
  */
-fun TODO("10.1 Buat Generic type dari function ini") partitionTo(TODO("10.2 Buat parameter yang dibutuhkan dalam bentuk Generic juga. Parameter yang diterima, 2 buah mutable collection dan 1 buah predikat high-order function")) {
-    TODO("10.3 Buat syntax logic partition. Referensi: Silakan contek extension function partition dari Iterable")
+public inline fun /* TODO("10.1 Hapus comment section /* dan */") <T, C: MutableCollection<T>> Collection<T>.*/partitionTo(/* TODO("10.2 Buat parameter yang dibutuhkan dalam bentuk Generic juga. Parameter yang diterima, 2 buah mutable collection dan 1 buah predikat high-order function") */)/* TODO("10.3 Hapus comment section /* dan */") : Pair<C, C> */ {
+    TODO("10.4 Buat syntax logic partition. Referensi: Silakan contek extension function partition() dari Iterable di atas")
 }
 
-// Pastikan tidak ada error di sini
+// Hapus comment section //, /*, dan */. Pastikan tidak ada error di sini
 fun main(args: Array<String>) {
     // These codes must compiled
-    foo(name = "Budi", toUpperCase = true)
-    foo("Budi")
-    foo("Budi", 23)
+    // foo(name = "Budi", toUpperCase = true)
+    // foo("Budi")
+    // foo("Budi", 23)
 
     // These codes must compiled
-    val (words, lines) = listOf("a", "a b c", "b", "c", "d e", "f g", "d")
+    /*val (words, lines) = listOf("a", "a b c", "b", "c", "d e", "f g", "d")
         .partitionTo(ArrayList(), ArrayList()) { s -> !s.contains(" ") }
     print(words == listOf("a", "b", "c", "d")) // true
-    print(lines == listOf("a b c", "d e", "f g")) // true
+    print(lines == listOf("a b c", "d e", "f g")) // true*/
 
     // These codes must compiled
-    val (letters, symbols) = setOf('a', '%', 'r', '}')
+    /*val (letters, symbols) = setOf('a', '%', 'r', '}')
         .partitionTo(HashSet(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z' }
     print(letters == setOf('a', 'r')) // true
-    print(symbols == setOf('%', '}')) // true
+    print(symbols == setOf('%', '}')) // true*/
 }

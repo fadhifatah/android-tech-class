@@ -52,7 +52,7 @@ fun fizzBuzzList(length: Int): List<String> {
  * [] menjadi []
  * [15] menjadi [Fizz]
  */
-fun convertToFizzBuzz(collection: List<Int>): List<Int> {
+fun convertToFizzBuzz(collection: List<Int>): List<String> {
     TODO("6.2.1 Ubah List dari angka-angka ke dalam FizzBuzz list")
 }
 
@@ -184,6 +184,6 @@ fun doSomething_Old(
 
 fun doSomething(collection: Collection<String>): Collection<String>? {
     val groupsByLength = collection.groupBy { TODO("8.1 Group item berdasarkan panjang karakter")}
-    val maximumSizeOfGroup = groupsByLength.values.map { TODO("8.2 Mapping setiap item menjadi size-nya") }.maxOrNull() // Ini akan mencari max dari list ini
+    val maximumSizeOfGroup = groupsByLength.values.map { TODO("8.2 Mapping setiap item menjadi size-nya") }//.maxOrNull() // Ini akan mencari max dari list ini
     return groupsByLength.values.firstOrNull { TODO("8.3 Cari pertama kali yang match dengan $maximumSizeOfGroup") }
 }
