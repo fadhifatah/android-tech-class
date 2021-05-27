@@ -114,6 +114,9 @@ fun primeFactor(n: Int): Map<Int, Int> {
     // bilangan tersebut adalah bilangan prima, sehingga himpunan faktorisasi prima hanya dirinya sendiri :)
     //
     // Gunakan sqrt() dari Math untuk mencari hasil dari akar suatu bilngan
+
+    /*
+    TODO("Hapus comment section /* dan */, lalu kerjakan TODO di bawah")
     for (TODO("4.1 Buat sintaks iterasi dari 3 sampai dengan akar dari bilangan $number dengan menlongkap sebanyak 2 angka")) {
         // Dimulai dari angka 3
         while (TODO("Code: Selama masih habis dibagi dengan bilangan $i, terus bagi sampai tidak dapat dibagi lagi")) {
@@ -121,6 +124,7 @@ fun primeFactor(n: Int): Map<Int, Int> {
             number /= i // Update number
         }
     }
+    */
 
     // Ini adalah sisa dari faktorisasi terakhir, kalau masih ada bilangan prima yang habis membagi $number
     if (number > 2) mapPrimeFactor[number] = (mapPrimeFactor[number] ?: 0) + 1
